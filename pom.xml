@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        Spring Boot projelerinin kalbi: parent POM.
+        Versiyon: 3.2.0 (yeni, stabil). Versiyon yönetimini otomatik üstlenir.
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/>
+    </parent>
+
+    <!-- Projenin kimliği -->
+    <groupId>com.devopsanddevsecops</groupId>
+    <artifactId>DevOpsAndDevSecopsTesting</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>DevOpsAndDevSecopsTesting</name>
+
+    <!--
+         Java 17 = Spring Boot 3.x için resmi minimum versiyon.
+         (Java 8/11 artık destek dışıdır.)
+    -->
+    <properties>
+        <java.version>22</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!--
+            Temel web starter: REST Controller, Tomcat, JSON serializer, logging
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Test bağımlılıkları -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!--
+                Uygulamayı tek jar olarak çalıştırmamızı sağlar.
+                "java -jar target/app.jar"
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
